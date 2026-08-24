@@ -1,0 +1,138 @@
+=== 1. Full service log ===
+Aug 24 15:04:54 orangepi5max systemd[1]: Started logger.service - Logger Exercise Service.
+Aug 24 15:04:54 orangepi5max (logger)[3656]: logger.service: Failed to locate executable /home/orangepi/Exercise_2/logger: No such file or directory
+Aug 24 15:04:54 orangepi5max (logger)[3656]: logger.service: Failed at step EXEC spawning /home/orangepi/Exercise_2/logger: No such file or directory
+Aug 24 15:04:54 orangepi5max systemd[1]: logger.service: Main process exited, code=exited, status=203/EXEC
+Aug 24 15:04:54 orangepi5max systemd[1]: logger.service: Failed with result 'exit-code'.
+Aug 24 15:10:48 orangepi5max systemd[1]: Started logger.service - Logger Exercise Service.
+Aug 24 15:10:48 orangepi5max (logger)[4142]: logger.service: Failed to locate executable /home/orangepi/hoc_linux/devlinux/embedded-linux/K26.2/nguyen-hoang-minh-triet/session-06/Exercise_2/logger: No such file or directory
+Aug 24 15:10:48 orangepi5max (logger)[4142]: logger.service: Failed at step EXEC spawning /home/orangepi/hoc_linux/devlinux/embedded-linux/K26.2/nguyen-hoang-minh-triet/session-06/Exercise_2/logger: No such file or directory
+Aug 24 15:10:48 orangepi5max systemd[1]: logger.service: Main process exited, code=exited, status=203/EXEC
+Aug 24 15:10:48 orangepi5max systemd[1]: logger.service: Failed with result 'exit-code'.
+Aug 24 15:15:04 orangepi5max systemd[1]: Started logger.service - Logger Exercise Service.
+Aug 24 15:15:04 orangepi5max logger[4526]: Service running normally, cycle 1
+Aug 24 15:15:04 orangepi5max logger[4526]: Memory usage high: 92%
+Aug 24 15:15:04 orangepi5max logger[4526]: Failed to connect to database, retry 1
+Aug 24 15:15:06 orangepi5max logger[4526]: Service running normally, cycle 2
+Aug 24 15:15:06 orangepi5max logger[4526]: Memory usage high: 88%
+Aug 24 15:15:06 orangepi5max logger[4526]: Failed to connect to database, retry 2
+Aug 24 15:15:08 orangepi5max logger[4526]: Service running normally, cycle 3
+Aug 24 15:15:08 orangepi5max logger[4526]: Memory usage high: 83%
+Aug 24 15:15:08 orangepi5max logger[4526]: Failed to connect to database, retry 3
+Aug 24 15:15:10 orangepi5max logger[4526]: Service running normally, cycle 4
+Aug 24 15:15:10 orangepi5max logger[4526]: Memory usage high: 82%
+Aug 24 15:15:10 orangepi5max logger[4526]: Failed to connect to database, retry 4
+Aug 24 15:15:12 orangepi5max logger[4526]: Service running normally, cycle 5
+Aug 24 15:15:12 orangepi5max logger[4526]: Memory usage high: 92%
+Aug 24 15:15:12 orangepi5max logger[4526]: Failed to connect to database, retry 5
+Aug 24 15:15:14 orangepi5max logger[4526]: Service running normally, cycle 6
+Aug 24 15:15:14 orangepi5max logger[4526]: Memory usage high: 94%
+Aug 24 15:15:14 orangepi5max logger[4526]: Failed to connect to database, retry 6
+Aug 24 15:15:16 orangepi5max logger[4526]: Service running normally, cycle 7
+Aug 24 15:15:16 orangepi5max logger[4526]: Memory usage high: 84%
+Aug 24 15:15:16 orangepi5max logger[4526]: Failed to connect to database, retry 7
+Aug 24 15:15:18 orangepi5max logger[4526]: Service running normally, cycle 8
+Aug 24 15:15:18 orangepi5max logger[4526]: Memory usage high: 93%
+Aug 24 15:15:18 orangepi5max logger[4526]: Failed to connect to database, retry 8
+Aug 24 15:15:20 orangepi5max logger[4526]: Service running normally, cycle 9
+Aug 24 15:15:20 orangepi5max logger[4526]: Memory usage high: 86%
+Aug 24 15:15:20 orangepi5max logger[4526]: Failed to connect to database, retry 9
+Aug 24 15:15:22 orangepi5max logger[4526]: Service running normally, cycle 10
+Aug 24 15:15:22 orangepi5max logger[4526]: Memory usage high: 94%
+Aug 24 15:15:22 orangepi5max logger[4526]: Failed to connect to database, retry 10
+Aug 24 15:15:24 orangepi5max logger[4526]: Service running normally, cycle 11
+Aug 24 15:15:24 orangepi5max logger[4526]: Memory usage high: 80%
+Aug 24 15:15:24 orangepi5max logger[4526]: Failed to connect to database, retry 11
+Aug 24 15:15:26 orangepi5max logger[4526]: Service running normally, cycle 12
+Aug 24 15:15:26 orangepi5max logger[4526]: Memory usage high: 93%
+Aug 24 15:15:26 orangepi5max logger[4526]: Failed to connect to database, retry 12
+Aug 24 15:15:28 orangepi5max logger[4526]: Service running normally, cycle 13
+Aug 24 15:15:28 orangepi5max logger[4526]: Memory usage high: 81%
+Aug 24 15:15:28 orangepi5max logger[4526]: Failed to connect to database, retry 13
+Aug 24 15:15:30 orangepi5max logger[4526]: Service running normally, cycle 14
+Aug 24 15:15:30 orangepi5max logger[4526]: Memory usage high: 86%
+Aug 24 15:15:30 orangepi5max logger[4526]: Failed to connect to database, retry 14
+Aug 24 15:15:32 orangepi5max logger[4526]: Service running normally, cycle 15
+Aug 24 15:15:32 orangepi5max logger[4526]: Memory usage high: 94%
+Aug 24 15:15:32 orangepi5max logger[4526]: Failed to connect to database, retry 15
+Aug 24 15:15:34 orangepi5max logger[4526]: Maximum runtime reached, aborting service
+Aug 24 15:15:34 orangepi5max systemd[1]: logger.service: Main process exited, code=killed, status=6/ABRT
+Aug 24 15:15:34 orangepi5max systemd[1]: logger.service: Failed with result 'signal'.
+=== 2. Warning level and above ===
+Aug 24 15:04:54 orangepi5max (logger)[3656]: logger.service: Failed at step EXEC spawning /home/orangepi/Exercise_2/logger: No such file or directory
+Aug 24 15:04:54 orangepi5max systemd[1]: logger.service: Failed with result 'exit-code'.
+Aug 24 15:10:48 orangepi5max (logger)[4142]: logger.service: Failed at step EXEC spawning /home/orangepi/hoc_linux/devlinux/embedded-linux/K26.2/nguyen-hoang-minh-triet/session-06/Exercise_2/logger: No such file or directory
+Aug 24 15:10:48 orangepi5max systemd[1]: logger.service: Failed with result 'exit-code'.
+Aug 24 15:15:04 orangepi5max logger[4526]: Memory usage high: 92%
+Aug 24 15:15:04 orangepi5max logger[4526]: Failed to connect to database, retry 1
+Aug 24 15:15:06 orangepi5max logger[4526]: Memory usage high: 88%
+Aug 24 15:15:06 orangepi5max logger[4526]: Failed to connect to database, retry 2
+Aug 24 15:15:08 orangepi5max logger[4526]: Memory usage high: 83%
+Aug 24 15:15:08 orangepi5max logger[4526]: Failed to connect to database, retry 3
+Aug 24 15:15:10 orangepi5max logger[4526]: Memory usage high: 82%
+Aug 24 15:15:10 orangepi5max logger[4526]: Failed to connect to database, retry 4
+Aug 24 15:15:12 orangepi5max logger[4526]: Memory usage high: 92%
+Aug 24 15:15:12 orangepi5max logger[4526]: Failed to connect to database, retry 5
+Aug 24 15:15:14 orangepi5max logger[4526]: Memory usage high: 94%
+Aug 24 15:15:14 orangepi5max logger[4526]: Failed to connect to database, retry 6
+Aug 24 15:15:16 orangepi5max logger[4526]: Memory usage high: 84%
+Aug 24 15:15:16 orangepi5max logger[4526]: Failed to connect to database, retry 7
+Aug 24 15:15:18 orangepi5max logger[4526]: Memory usage high: 93%
+Aug 24 15:15:18 orangepi5max logger[4526]: Failed to connect to database, retry 8
+Aug 24 15:15:20 orangepi5max logger[4526]: Memory usage high: 86%
+Aug 24 15:15:20 orangepi5max logger[4526]: Failed to connect to database, retry 9
+Aug 24 15:15:22 orangepi5max logger[4526]: Memory usage high: 94%
+Aug 24 15:15:22 orangepi5max logger[4526]: Failed to connect to database, retry 10
+Aug 24 15:15:24 orangepi5max logger[4526]: Memory usage high: 80%
+Aug 24 15:15:24 orangepi5max logger[4526]: Failed to connect to database, retry 11
+Aug 24 15:15:26 orangepi5max logger[4526]: Memory usage high: 93%
+Aug 24 15:15:26 orangepi5max logger[4526]: Failed to connect to database, retry 12
+Aug 24 15:15:28 orangepi5max logger[4526]: Memory usage high: 81%
+Aug 24 15:15:28 orangepi5max logger[4526]: Failed to connect to database, retry 13
+Aug 24 15:15:30 orangepi5max logger[4526]: Memory usage high: 86%
+Aug 24 15:15:30 orangepi5max logger[4526]: Failed to connect to database, retry 14
+Aug 24 15:15:32 orangepi5max logger[4526]: Memory usage high: 94%
+Aug 24 15:15:32 orangepi5max logger[4526]: Failed to connect to database, retry 15
+Aug 24 15:15:34 orangepi5max logger[4526]: Maximum runtime reached, aborting service
+Aug 24 15:15:34 orangepi5max systemd[1]: logger.service: Main process exited, code=killed, status=6/ABRT
+Aug 24 15:15:34 orangepi5max systemd[1]: logger.service: Failed with result 'signal'.
+=== 3. Error level and above ===
+Aug 24 15:04:54 orangepi5max (logger)[3656]: logger.service: Failed at step EXEC spawning /home/orangepi/Exercise_2/logger: No such file or directory
+Aug 24 15:10:48 orangepi5max (logger)[4142]: logger.service: Failed at step EXEC spawning /home/orangepi/hoc_linux/devlinux/embedded-linux/K26.2/nguyen-hoang-minh-triet/session-06/Exercise_2/logger: No such file or directory
+Aug 24 15:15:04 orangepi5max logger[4526]: Failed to connect to database, retry 1
+Aug 24 15:15:06 orangepi5max logger[4526]: Failed to connect to database, retry 2
+Aug 24 15:15:08 orangepi5max logger[4526]: Failed to connect to database, retry 3
+Aug 24 15:15:10 orangepi5max logger[4526]: Failed to connect to database, retry 4
+Aug 24 15:15:12 orangepi5max logger[4526]: Failed to connect to database, retry 5
+Aug 24 15:15:14 orangepi5max logger[4526]: Failed to connect to database, retry 6
+Aug 24 15:15:16 orangepi5max logger[4526]: Failed to connect to database, retry 7
+Aug 24 15:15:18 orangepi5max logger[4526]: Failed to connect to database, retry 8
+Aug 24 15:15:20 orangepi5max logger[4526]: Failed to connect to database, retry 9
+Aug 24 15:15:22 orangepi5max logger[4526]: Failed to connect to database, retry 10
+Aug 24 15:15:24 orangepi5max logger[4526]: Failed to connect to database, retry 11
+Aug 24 15:15:26 orangepi5max logger[4526]: Failed to connect to database, retry 12
+Aug 24 15:15:28 orangepi5max logger[4526]: Failed to connect to database, retry 13
+Aug 24 15:15:30 orangepi5max logger[4526]: Failed to connect to database, retry 14
+Aug 24 15:15:32 orangepi5max logger[4526]: Failed to connect to database, retry 15
+Aug 24 15:15:34 orangepi5max logger[4526]: Maximum runtime reached, aborting service
+=== 4. Log from the last 1 minute ===
+-- No entries --
+=== 5. Crash point ===
+Aug 24 15:04:54 orangepi5max (logger)[3656]: logger.service: Failed at step EXEC spawning /home/orangepi/Exercise_2/logger: No such file or directory
+Aug 24 15:10:48 orangepi5max (logger)[4142]: logger.service: Failed at step EXEC spawning /home/orangepi/hoc_linux/devlinux/embedded-linux/K26.2/nguyen-hoang-minh-triet/session-06/Exercise_2/logger: No such file or directory
+Aug 24 15:15:04 orangepi5max logger[4526]: Failed to connect to database, retry 1
+Aug 24 15:15:06 orangepi5max logger[4526]: Failed to connect to database, retry 2
+Aug 24 15:15:08 orangepi5max logger[4526]: Failed to connect to database, retry 3
+Aug 24 15:15:10 orangepi5max logger[4526]: Failed to connect to database, retry 4
+Aug 24 15:15:12 orangepi5max logger[4526]: Failed to connect to database, retry 5
+Aug 24 15:15:14 orangepi5max logger[4526]: Failed to connect to database, retry 6
+Aug 24 15:15:16 orangepi5max logger[4526]: Failed to connect to database, retry 7
+Aug 24 15:15:18 orangepi5max logger[4526]: Failed to connect to database, retry 8
+Aug 24 15:15:20 orangepi5max logger[4526]: Failed to connect to database, retry 9
+Aug 24 15:15:22 orangepi5max logger[4526]: Failed to connect to database, retry 10
+Aug 24 15:15:24 orangepi5max logger[4526]: Failed to connect to database, retry 11
+Aug 24 15:15:26 orangepi5max logger[4526]: Failed to connect to database, retry 12
+Aug 24 15:15:28 orangepi5max logger[4526]: Failed to connect to database, retry 13
+Aug 24 15:15:30 orangepi5max logger[4526]: Failed to connect to database, retry 14
+Aug 24 15:15:32 orangepi5max logger[4526]: Failed to connect to database, retry 15
+Aug 24 15:15:34 orangepi5max logger[4526]: Maximum runtime reached, aborting service

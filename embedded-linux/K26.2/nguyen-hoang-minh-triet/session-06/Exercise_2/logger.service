@@ -1,0 +1,13 @@
+[Unit]
+Description=Logger Exercise Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/orangepi/hoc_linux/devlinux/embedded-linux/K26.2/nguyen-hoang-minh-triet/session-06/Exercise_2/logger
+StandardOutput=journal
+StandardError=journal
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
