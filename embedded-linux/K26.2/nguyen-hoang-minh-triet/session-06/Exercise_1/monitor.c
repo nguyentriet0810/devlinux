@@ -5,40 +5,50 @@
 #include <unistd.h>
 #include <signal.h>
 
-// Biến cờ toàn cục báo hiệu vòng lặp tiếp tục chạy
 volatile sig_atomic_t keep_running = 1;
 
-// Hàm xử lý tín hiệu
 void sigterm_handler(int signum)
 {
     if (signum == SIGTERM)
     {
-        keep_running = 0; // Đổi cờ để thoát vòng lặp an toàn
+        keep_running = 0;
     }
 }
 
 int main()
 {
-    // Đăng ký bắt tín hiệu SIGTERM
     struct sigaction action;
     action.sa_handler = sigterm_handler;
-    sigemptyset(&action.sa_mask);
-    action.sa_flags = 0;
-    sigaction(SIGTERM, &action, NULL);
 
-    // Tắt bộ đệm cho stdout để log ghi thẳng vào systemd journal
+    sigemptyset(&action.sa_mask);
+    if (sigemptyset(&action.sa_mask) == -1)
+    {
+        perror("sigemptyset");
+        return EXIT_FAILURE;
+    }
+
+    action.sa_flags = 0;
+
+    sigaction(SIGTERM, &action, NULL);
+    if (sigaction(SIGINT, &action, NULL) == -1)
+    {
+        perror("sigaction");
+        return EXIT_FAILURE;
+    }
+
+    // turnoff buffer for stdout write log into systemd journal
     setbuf(stdout, NULL);
 
     printf("Monitor service started.\n");
 
-    // Vòng lặp vô hạn, in ra log mỗi 1 giây
+    // infinity loop, retry every 1s
     while (keep_running)
     {
         printf("Monitor is running...\n");
         sleep(1);
     }
 
-    // In dòng thông báo khi bị ngắt bởi systemctl stop
+    // write notify when systemctl stop
     printf("Service shutting down...\n");
     return 0;
 }

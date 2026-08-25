@@ -9,6 +9,8 @@
 #define LOG_WARNING "<4>"
 #define LOG_INFO "<6>"
 
+#define MAX_OF_CYCLE 15
+
 int main(void)
 {
         int cycle = 0;
@@ -39,8 +41,12 @@ int main(void)
 
                 sleep(2);
 
-                if (cycle >= 15)
+                if (cycle >= MAX_OF_CYCLE)
                 {
+                        /*
+                         * Intentionally abort the process after approximately 30 seconds
+                         * to simulate a service crash for systemd/journalctl analysis.
+                         */
                         fprintf(stderr,
                                 LOG_ERR
                                 "Maximum runtime reached, aborting service\n");
