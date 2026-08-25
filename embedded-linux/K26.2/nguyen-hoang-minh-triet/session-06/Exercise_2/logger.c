@@ -10,6 +10,7 @@
 #define LOG_INFO "<6>"
 
 #define MAX_OF_CYCLE 15
+#define CYCLE_INTERVAL 2
 
 int main(void)
 {
@@ -39,7 +40,7 @@ int main(void)
                         "Failed to connect to database, retry %d\n",
                         cycle);
 
-                sleep(2);
+                sleep(CYCLE_INTERVAL);
 
                 if (cycle >= MAX_OF_CYCLE)
                 {

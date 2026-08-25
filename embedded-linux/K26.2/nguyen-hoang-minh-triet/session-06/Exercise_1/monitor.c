@@ -2,14 +2,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 #include <unistd.h>
 #include <signal.h>
+
+#define SLEEP_TIME 1
 
 volatile sig_atomic_t keep_running = 1;
 
 void sigterm_handler(int signum)
 {
-    if (signum == SIGTERM)
+    if ((signum == SIGINT) || (signum == SIGTERM))
     {
         keep_running = 0;
     }
@@ -18,21 +22,28 @@ void sigterm_handler(int signum)
 int main()
 {
     struct sigaction action;
-    action.sa_handler = sigterm_handler;
+    memset(&action, 0, sizeof(action));
 
-    sigemptyset(&action.sa_mask);
+    action.sa_handler = sigterm_handler;
+    action.sa_flags = 0;
+
     if (sigemptyset(&action.sa_mask) == -1)
     {
         perror("sigemptyset");
         return EXIT_FAILURE;
     }
 
-    action.sa_flags = 0;
-
-    sigaction(SIGTERM, &action, NULL);
+    // register handler if user pess ctrl + c
     if (sigaction(SIGINT, &action, NULL) == -1)
     {
-        perror("sigaction");
+        perror("sigaction SIGINT");
+        return EXIT_FAILURE;
+    }
+
+    // register handler if systemd stop process
+    if (sigaction(SIGTERM, &action, NULL) == -1)
+    {
+        perror("sigaction SIGTERM");
         return EXIT_FAILURE;
     }
 
@@ -45,10 +56,10 @@ int main()
     while (keep_running)
     {
         printf("Monitor is running...\n");
-        sleep(1);
+        sleep(SLEEP_TIME);
     }
 
     // write notify when systemctl stop
     printf("Service shutting down...\n");
-    return 0;
+    return EXIT_SUCCESS;
 }
