@@ -13,7 +13,7 @@ volatile sig_atomic_t keep_running = 1;
 
 void sigterm_handler(int signum)
 {
-    if ((signum == SIGINT) || (signum == SIGTERM))
+    if (signum == SIGTERM)
     {
         keep_running = 0;
     }
@@ -24,21 +24,13 @@ int main()
     struct sigaction action;
     memset(&action, 0, sizeof(action));
 
-    action.sa_handler = sigterm_handler;
-    action.sa_flags = 0;
-
     if (sigemptyset(&action.sa_mask) == -1)
     {
         perror("sigemptyset");
         return EXIT_FAILURE;
     }
-
-    // register handler if user pess ctrl + c
-    if (sigaction(SIGINT, &action, NULL) == -1)
-    {
-        perror("sigaction SIGINT");
-        return EXIT_FAILURE;
-    }
+    action.sa_handler = sigterm_handler;
+    action.sa_flags = 0;
 
     // register handler if systemd stop process
     if (sigaction(SIGTERM, &action, NULL) == -1)
@@ -47,7 +39,7 @@ int main()
         return EXIT_FAILURE;
     }
 
-    // turnoff buffer for stdout write log into systemd journal
+    // turn off buffer for stdout write log into systemd journal
     setbuf(stdout, NULL);
 
     printf("Monitor service started.\n");
