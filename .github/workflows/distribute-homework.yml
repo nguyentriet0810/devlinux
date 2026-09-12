@@ -366,6 +366,28 @@ jobs:
 
           echo "✅ Homework distributed successfully"
 
+      # Step 13b: Commit and push distributed files
+      - name: Commit distributed files
+        if: steps.validate_homework_format.outputs.is_valid_format == 'true' && steps.check_conflict.outputs.has_conflict == 'false'
+        run: |
+          SUBJECT="${{ steps.branch_info.outputs.subject }}"
+          COURSE="${{ steps.branch_info.outputs.course }}"
+          COURSE_ARG="${SUBJECT}/${COURSE}"
+
+          git config user.email "devlinux-bot@devlinux.vn"
+          git config user.name "DevLinux Bot"
+
+          # Check if there are any changes to commit
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Committing distributed files..."
+            git add .
+            git commit -m "homework: distribute $COURSE_ARG to all students"
+            git push origin master
+            echo "✅ Distributed files committed and pushed"
+          else
+            echo "ℹ️  No changes to commit"
+          fi
+
       # Step 14: Auto-merge PR
       - name: Auto-merge PR
         if: steps.validate_homework_format.outputs.is_valid_format == 'true' && steps.check_conflict.outputs.has_conflict == 'false'
