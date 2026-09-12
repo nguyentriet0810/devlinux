@@ -83,11 +83,9 @@ cp homework.template.md embedded-linux/K26.1/homeworks/session-10.md
 
 **Mở file session-10.md và chỉnh:**
 
-```markdown
+```
 # Assignment — session-10
 **Deadline: 2026-06-14 23:59:00**
-
-> ⚠️ Xóa tất cả dòng hướng dẫn (bắt đầu bằng `>`) trước khi push
 
 ---
 
@@ -100,34 +98,26 @@ Viết chương trình C tính...
 ### Design Hints (optional)
 
 Gợi ý struct:
-```c
 typedef struct {
     int value;
 } my_t;
-```
 
 ### Suggested Approach (optional)
 
-```
 1. Đọc input
 2. Xử lý dữ liệu
 3. In kết quả
-```
 
 ### Expected Output (optional)
 
 Khi chạy với input `5`, output:
-```
 Result: 5
-```
 
 ### Submission
 
-```
 Exercise_1/
 ├── main.c
 └── Makefile
-```
 
 ---
 
@@ -139,11 +129,9 @@ Exercise_1/
 
 ### Submission
 
-```
 Exercise_2/
 ├── main.c
 └── Makefile
-```
 ```
 
 **Giải thích các phần:**
