@@ -161,15 +161,15 @@ Exercise_2/
 ### Bước 3: Xóa tất cả dòng `>` (hướng dẫn template)
 
 **Trước (template):**
-```markdown
-> Tag `[build]`: the system will compile and run the program
+```
+> Tag [build]: the system will compile and run the program
 > Describe the exercise requirements. Be as specific as possible.
 
 Write a C program that ...
 ```
 
 **Sau (khi sửa xong):**
-```markdown
+```
 Write a C program that ...
 ```
 
